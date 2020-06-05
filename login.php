@@ -1,29 +1,19 @@
 <!DOCTYPE html>
 <?php
 
-
-
+session_start();
 require_once "pdo.php";
-*/if(isset($_POST['submit'])){
- if (isset($_POST['teacher_email']) && isset($_POST['teacher_password'])) {
+ if (isset($_POST['teacher_name']) && isset($_POST['teacher_email']) && isset($_POST['teacher_password'])) {
 
 $stmt = $pdo->query("SELECT 'teacher_name', 'teacher_email', 'teacher_password' FROM teachers");
-while($row = $stmt->fetchAll(PDO::FETCH_ASSOC))
-{
-  $teacher_email = ($row['teacher_email']);
-  $teacher_password = ($row['teacher_password']);
+$row = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-if ($row['teacher_email'] === $_POST['teacher_email'] && $row['teacher_password'] === $_POST['teacher_password']){
+if ($row['teacher_email'] == $_POST['teacher_email'])  {
   $_SESSION['teacher_email'] = $_POST['teacher_email'];
-   if ($_SESSION['teacher_email']){
-     $_SESSION['teacher_email'];
-          echo($row);
-        }
-      }
-    }
-}
 
-}
+        }
+    }
+  header('Location: index.php');
 
 ?>
 <!DOCTYPE html>
@@ -36,16 +26,13 @@ if ($row['teacher_email'] === $_POST['teacher_email'] && $row['teacher_password'
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-
+  <link rel="shortcut icon" type="image/x-icon" href="kemasare_logo.ico" />
   <title>Teacher - Login</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
@@ -69,7 +56,7 @@ if ($row['teacher_email'] === $_POST['teacher_email'] && $row['teacher_password'
                   <div class="text-center">
                     <h1 class="h4 text-gray-900 mb-4">Login Here!</h1>
                   </div>
-                  <form class="user" method="post">
+                  <f2orm class="user" method="post">
                     <div class="form-group">
                       <input type="email" class="form-control form-control-user" name='teacher_email'
                       id="teacher_email" aria-describedby="emailHelp" placeholder="Enter Email Address...">
@@ -85,7 +72,6 @@ if ($row['teacher_email'] === $_POST['teacher_email'] && $row['teacher_password'
                       </div>
                     </div>
                     <input type="submit" value="login" class="btn btn-primary btn-user btn-block">
-                    <a href="<?php echo($_SERVER['PHP_SELF']);?>"/a>
 
                     <hr>
                     <a href="welcome.php" class="btn btn-google btn-user btn-block">

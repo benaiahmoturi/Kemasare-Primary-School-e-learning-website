@@ -21,7 +21,7 @@ if (isset($_SESSION['teacher_email'])){
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-
+  <link rel="shortcut icon" type="image/x-icon" href="kemasare_logo.ico" />
   <title>Teacher - Dashboard</title>
 
   <!-- Custom fonts for this template-->
@@ -31,6 +31,7 @@ if (isset($_SESSION['teacher_email'])){
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
@@ -118,8 +119,8 @@ if (isset($_SESSION['teacher_email'])){
         </a>
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Login Screens:</h6>
-            <a class="collapse-item" href="login.php">Login</a>
+            <h6 class="collapse-header">Logout Screens:</h6>
+            <a class="collapse-item" href="logout.php">Logout</a>
             <a class="collapse-item" href="register.php">Register</a>
             <a class="collapse-item" href="forgot-password.php">Forgot Password</a>
             <div class="collapse-divider"></div>
